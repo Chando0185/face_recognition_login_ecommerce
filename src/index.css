@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00d2ff;
+  --color-primary-dark: #00a8cc;
+  --color-secondary: #9d50bb;
+  --color-secondary-dark: #6e48aa;
+  --color-dark: #0f172a;
+  --color-dark-lighter: #1e293b;
+  --color-dark-card: rgba(30, 41, 59, 0.7);
+
+  --font-sans: Inter, system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+
+  html,
+  body {
+    background-color: var(--color-dark);
+    color: white;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    background: radial-gradient(circle at top left, var(--color-dark-lighter) 0%, var(--color-dark) 100%);
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+  }
+}
+
+.glass-morphism {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-xl;
+}
+
+.glass-morphism-dark {
+  @apply bg-black/40 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+.btn-primary {
+  @apply px-6 py-2 bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary-dark rounded-full font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors;
+}
